@@ -1,16 +1,9 @@
-import { useLocation } from "@remix-run/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Index() {
   const [dbNames, setDbNames] = useState<string[]>([]);
   const [newDbName, setNewDbName] = useState("");
-
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log("Current location:", location);
-  }, [location]);
 
   const handleAddDbName = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +15,7 @@ export default function Index() {
 
   return (
     <div className="p-6 font-sans">
-      <h1 className="text-2xl font-bold mb-4">Database List</h1>
+      <h2 className="text-xl font-bold mb-4">Database List</h2>
       <form onSubmit={handleAddDbName} className="mb-4">
         <input
           type="text"

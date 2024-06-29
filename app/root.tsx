@@ -1,10 +1,12 @@
+import { useEffect } from "react";
 import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+  useMatches,
+  useLocation } from "@remix-run/react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,6 +27,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const location = useLocation();
+  const matches = useMatches();
+
+  useEffect(() => {
+    // Removed logging
+  }, [location, matches]);
+
   return <Outlet />;
 }
 

@@ -5,7 +5,7 @@ export default function Document() {
 
   return (
     <div>
-      <h2>Document Page</h2>
+      <h3>Document Page</h3>
       <p>Database: {name}</p>
       <p>Document ID: {id}</p>
     </div>
