@@ -1,10 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Link } from "@remix-run/react";
+import { Outlet, useParams } from "react-router-dom";
 
-export default function DbIndex() {
+export default function Database() {
+  const { name } = useParams();
+
   return (
     <div>
-      <h2>Database Page</h2>
-      <p>This is the index page for the /db route.</p>
+      <h2>Database: {name}</h2>
+      <p>
+        <Link to="/db">Back to Databases</Link>
+      </p>
+      <p>
+        This is the database info page.
+      </p>
       <Outlet /> 
     </div>
   );

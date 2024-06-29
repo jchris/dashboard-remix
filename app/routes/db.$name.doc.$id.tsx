@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import { useParams } from "react-router-dom";
 
 export default function Document() {
@@ -5,9 +6,8 @@ export default function Document() {
 
   return (
     <div>
-      <h3>Document Page</h3>
-      <p>Database: {name}</p>
-      <p>Document ID: {id}</p>
+      <h3>Document: {id}</h3>
+      <p>Database: <Link to={`/db/${name}`}>{name}</Link></p>
     </div>
   );
 }

@@ -1,12 +1,9 @@
-import { useEffect } from "react";
 import {
   Links,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
-  useMatches,
-  useLocation } from "@remix-run/react";
+  ScrollRestoration } from "@remix-run/react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -27,14 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const location = useLocation();
-  const matches = useMatches();
-
-  useEffect(() => {
-    // Removed logging
-  }, [location, matches]);
-
-  return <Outlet />;
+  return <Outlet />
 }
 
 export function HydrateFallback() {
