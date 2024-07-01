@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { FireproofMenu } from "~/components/FireproofMenu";
 
 export default function DbIndex() {
   return (
     <div>
-      <h1>Databases</h1>
-      <p>This is the layout for the /db route.</p>
+      <FireproofMenu />
       <Outlet />
     </div>
   );

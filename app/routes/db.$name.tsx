@@ -1,19 +1,15 @@
-import { Link } from "@remix-run/react";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { Sidebar } from "~/components/Sidebar";
 
 export default function Database() {
-  const { name } = useParams();
-
   return (
-    <div>
-      <h2>Database: {name}</h2>
-      <p>
-        <Link to="/db">Back to Databases</Link>
-      </p>
-      <p>
-        This is the database info page.
-      </p>
-      <Outlet /> 
+    <div className="flex">
+      <div className="w-56"> {/* Fixed width of 16rem (64 units) */}
+        <Sidebar />
+      </div>
+      <div className="flex-1 p-4"> {/* Flex-grow to take remaining space */}
+        <Outlet />
+      </div>
     </div>
   );
 }
