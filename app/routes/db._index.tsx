@@ -7,10 +7,10 @@ import { Sidebar } from "~/components/Sidebar";
 export default function DatabaseIndex() {
   return (
     <div className="flex">
-      <div className="w-56"> {/* Fixed width of 16rem (64 units) */}
+      <div className="w-56">
         <Sidebar />
       </div>
-      <div className="flex-1 p-4"> {/* Flex-grow to take remaining space */}
+      <div className="flex-1 p-4">
         <DatabaseList />
       </div>
     </div>
@@ -19,13 +19,15 @@ export default function DatabaseIndex() {
 
 function DatabaseList() {
   return (
-    <div>
-      <h2>Available Databases</h2>
-      <p>This is the index page for the /db route.</p>
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-2">Available Databases</h2>
+      <p className="mb-4">This is the index page for the /db route.</p>
       <ul>
         {databases.map((db) => (
-          <li key={db}>
-            <Link to={`/db/${db}`}>{db}</Link>
+          <li key={db} className="mb-2">
+            <Link to={`/db/${db}`} className="text-blue-500 underline">
+              {db}
+            </Link>
           </li>
         ))}
       </ul>

@@ -16,9 +16,7 @@ export default function AddDocuments() {
       setHistory(changes);
     };
 
-    // Fetch initial documents
-    database.changes().then(handleChanges);
-
+    void handleChanges()
     return database.subscribe(handleChanges);
   }, [database]);
 
